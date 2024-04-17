@@ -1,3 +1,4 @@
+/* Base settings and global styles */
 * {
   margin: 0;
   padding: 0;
@@ -11,19 +12,20 @@
 }
 
 body {
-  color: var(--primary-color);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
+  color: var(--primary-color);
   background-color: var(--secondary-color);
 }
 
+/* Hero section styles */
 #hero-section {
+  position: relative;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  position: relative;
 
   h1 {
     font-size: 4em;
@@ -37,32 +39,47 @@ body {
   }
 
   #circle {
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    background-color: var(--primary-color);
     position: absolute;
     top: 0;
     right: 5%;
     z-index: -1;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
   }
 }
 
+/* Additional sections and components */
 #hero-description {
   width: 50%;
   display: flex;
   flex-direction: column;
   gap: 20px;
+
   p {
-    line-height: 25px;
     font-size: 1.4em;
+    line-height: 25px;
   }
+}
+
+nav {
+  height: 10vh;
+}
+
+#menu {
+  position: absolute;
+  top: 0;
+  width: 200px;
+  height: 100vh;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
 }
 
 #menu-icon {
   width: 45px;
   cursor: pointer;
-  transition: 300ms;
+  transition: width 300ms;
 }
 
 #menu-icon:hover {
@@ -75,23 +92,40 @@ body {
 }
 
 .hidden {
-  animation: 300ms slideOut;
+  transform: translateX(-200px);
+  animation: slideOut 300ms;
 }
 
-nav {
-  height: 10vh;
+.slidingIn {
+  animation: slideIn 300ms;
+}
+/* Navigation styles */
+.nav-ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: space-around;
+  height: 100%;
+  background-color: rgb(164, 253, 137);
+  color: rgb(161, 161, 250);
+  box-shadow: 0px 10px 26px 0px rgba(0, 0, 0, 0.36);
 }
 
-#menu {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-  position: absolute;
-  top: 0;
-  height: 100vh;
-  width: 200px;
-  animation: 300ms slideIn;
+.nav-ul li {
+  padding: 30px;
+  height: 100%;
+  cursor: pointer;
+  font-size: 1.5em;
+  font-weight: 800;
+  transition: height 300ms;
 }
 
+.nav-ul li:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+/* Keyframe animations */
 @keyframes slideIn {
   from {
     transform: translateX(-200px);
@@ -100,6 +134,7 @@ nav {
     transform: translateX(0);
   }
 }
+
 @keyframes slideOut {
   from {
     transform: translateX(0);
@@ -107,30 +142,4 @@ nav {
   to {
     transform: translateX(-200px);
   }
-}
-
-.nav-ul {
-  display: flex;
-  flex-direction: row;
-  list-style: none;
-  justify-content: space-around;
-  background-color: rgb(164, 253, 137);
-  height: 100%;
-  box-shadow: 0px 10px 26px 0px rgba(0, 0, 0, 0.36);
-  color: rgb(161, 161, 250);
-}
-
-.nav-ul li {
-  padding: 30px;
-  cursor: pointer;
-  height: 100%;
-  transition: 300ms;
-  font-weight: 800;
-  font-size: 1.5em;
-}
-
-.nav-ul li:hover {
-  height: 100%;
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
 }
