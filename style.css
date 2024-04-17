@@ -99,31 +99,6 @@ nav {
 .slidingIn {
   animation: slideIn 300ms;
 }
-/* Navigation styles */
-.nav-ul {
-  display: flex;
-  flex-direction: row;
-  list-style: none;
-  justify-content: space-around;
-  height: 100%;
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-  box-shadow: 0px 10px 26px 0px rgba(0, 0, 0, 0.36);
-}
-
-.nav-ul li {
-  padding: 30px;
-  height: 100%;
-  cursor: pointer;
-  font-size: 1.5em;
-  font-weight: 800;
-  transition: height 300ms;
-}
-
-.nav-ul li:hover {
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
-}
 
 /* Keyframe animations */
 @keyframes slideIn {
